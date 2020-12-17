@@ -31,6 +31,7 @@ function deleteToDo(event) {
     savetoDoes();
 }
 
+//이 부분은.. 하나하나 만들기보단 그냥 html string을 작성하서 넣는게 좋다.
 function paintToDo(text) {
     const li = document.createElement("li");
     const checkBtn = document.createElement("button");
@@ -47,8 +48,8 @@ function paintToDo(text) {
 
     checkBtn.append(checkImg);
     deleteBtn.appendChild(deleteImg);
-    checkBtn.addEventListener("click", deleteToDo);
-    deleteBtn.addEventListener("click", deleteToDo);
+    // checkBtn.addEventListener("click", deleteToDo);
+    // deleteBtn.addEventListener("click", deleteToDo);
 
     li.innerText = `${text} `;
     li.append(checkBtn);
@@ -66,16 +67,12 @@ function paintToDo(text) {
 }
 
 function loadData() {
-    const loadtoDoes = localStorage.getItem(TODOES_LS);
-
-    console.log(loadtoDoes);
-
-    if (toDoes === null) {
-        return;
-    }
-
-    for (let toDo of toDoes) {
-        paintToDo(toDo);
+    const loadToDoes = localStorage.getItem(TODOES_LS);
+    if (loadToDoes !== null) {
+        const parsedToDoes = JSON.parse(loadToDoes);
+        parsedToDoes.forEach(function (toDo) {
+            paintToDo(toDo.text);
+        });
     }
 }
 
@@ -85,18 +82,29 @@ function uploadList() {
         return;
     }
 
-    //중복일시 여기서 다끊자!
-
     //input text가 안비어있다면 input 자워주고 paintToDo실행
     paintToDo(input.value);
     input.value = "";
+    input.focus();
 }
 
 //plusBtn을 눌렀을시 input초기화, list에 올리기
 function init() {
     loadData();
+    toDoList.addEventListener("click", (event) => {
+        if (
+            event.target.classList.item(0) === "delete" ||
+            event.target.classList.item(0) === "check"
+        ) {
+            deleteToDo(event);
+        }
+    });
     plusBtn.addEventListener("click", uploadList);
-    input.addEventListener("submit", uploadList);
+    input.addEventListener("keypress", (event) => {
+        if (event.keyCode === 13) {
+            uploadList();
+        }
+    });
 }
 
 init();

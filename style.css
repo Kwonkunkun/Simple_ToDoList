@@ -16,12 +16,19 @@
     --size-cloth: 50px;
     --size-padding: 10px;
     --font-colorBtn: 15px;
-    --size-radius: 4px;
+    --size-radius: 10px;
     --base-space: 10px;
     --size-margin: 5px;
 }
 
 body {
+    background: rgb(145, 228, 230);
+    background: radial-gradient(
+        circle,
+        rgba(145, 228, 230, 1) 0%,
+        rgba(85, 198, 235, 1) 47%,
+        rgba(10, 160, 236, 1) 100%
+    );
     margin: 0;
     height: 100vh;
 }
@@ -58,7 +65,17 @@ button.plus {
 }
 
 .content {
-    background-color: var(--color-tickPink);
+    background: rgb(145, 228, 230);
+    background: linear-gradient(
+        90deg,
+        rgba(145, 228, 230, 1) 0%,
+        rgba(85, 198, 235, 1) 47%,
+        rgba(10, 160, 236, 1) 100%
+    );
+
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -79,6 +96,8 @@ button.plus {
 
     height: 70%;
     border-radius: var(--size-radius);
+
+    overflow-y: scroll;
 }
 
 .toDoList li {
@@ -86,9 +105,16 @@ button.plus {
 }
 
 .input-container {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(107, 255, 121, 1) 49%,
+        rgba(0, 255, 5, 1) 100%
+    );
+
     margin: var(--base-space);
     padding: var(--size-padding);
-    background-color: var(--color-pink);
     border-radius: var(--size-radius);
 }
 
