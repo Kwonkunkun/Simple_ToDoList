@@ -1,0 +1,97 @@
+:root {
+    /* color */
+    --color-black: #3f454d;
+    --color-white: #ffffff;
+    --color-blue: #3b88c3;
+    --color-yellow: #fbbe28;
+    --color-pink: pink;
+    --color-tickPink: #fd7f84;
+    --color-white-smooke: whitesmoke;
+    --color-gray: #dfe6e9;
+    --color-skin: #ffb8b8;
+    --color-button: #e8e8e8;
+
+    /* size*/
+    --size-button: 5px;
+    --size-cloth: 50px;
+    --size-padding: 10px;
+    --font-colorBtn: 15px;
+    --size-radius: 4px;
+    --base-space: 10px;
+    --size-margin: 5px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+i {
+    pointer-events: none;
+}
+
+ul {
+    list-style: none;
+    background-color: var(--color-gray);
+}
+
+button {
+    background-color: var(--color-button);
+    border: 0;
+    border-radius: var(--size-radius);
+}
+
+button:hover {
+    background-color: var(--color-white);
+}
+
+button.check {
+    color: green;
+}
+
+button.delete {
+    color: gray;
+}
+
+button.plus {
+    color: cadetblue;
+}
+
+.content {
+    background-color: var(--color-tickPink);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border-radius: var(--size-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.toDoList {
+    margin: var(--base-space);
+    padding-left: var(--size-padding);
+    background-color: var(--color-white-smooke);
+
+    height: 70%;
+    border-radius: var(--size-radius);
+}
+
+.toDoList li {
+    margin: var(--size-margin);
+}
+
+.input-container {
+    margin: var(--base-space);
+    padding: var(--size-padding);
+    background-color: var(--color-pink);
+    border-radius: var(--size-radius);
+}
+
+.input-container input {
+    width: 85%;
+}
