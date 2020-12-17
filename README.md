@@ -1,9 +1,3 @@
-<style>
-  .container{
-  display: flex;
-  }
-</style>
-
 # Simple_ToDoList
 - 드림코딩 엘리, 노마드 코더 참고
 
