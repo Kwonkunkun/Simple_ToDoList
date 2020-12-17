@@ -7,6 +7,8 @@
 
 <img width="352" alt="gif" src="https://user-images.githubusercontent.com/59603575/102445068-fae72f80-406d-11eb-8804-9e075d75fb4f.gif">
 
+<img width="352" alt="image" src="https://user-images.githubusercontent.com/59603575/102478229-b4f78f00-40a0-11eb-8880-4c56209054de.png">
+
 </div>
 
 ## 개요
@@ -19,3 +21,6 @@
 
 ## 추가사항
 - local storage에 저장 (노마드 코더 강의 참고)
+- evnet delegate 사용
+- 조금의 디자인 수정
+
