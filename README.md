@@ -21,6 +21,6 @@
 
 ## 추가사항
 - local storage에 저장 (노마드 코더 강의 참고)
-- evnet delegate 사용
+- event delegate 사용
 - 조금의 디자인 수정
 
